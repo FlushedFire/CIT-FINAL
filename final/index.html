@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style type = text/CSS>
+    body {background-color: #40E0D0; text-align: center;font-family: "Verdana", Verdana, Geneva, Tahoma, sans-serif ;}
+    p { color: grey; text-align: center;font-family: "Verdana", Verdana, Geneva, Tahoma, sans-serif ;}
+    h1 {color: white; text-align: center;font-family: "Verdana", Verdana, Geneva, Tahoma, sans-serif ;}
+    </style>
+<meta charset="UTF-8">
+<title>Meow</title>
+</head>
+<h1>Do You Like my Cat?</h1>
+    <script>
+
+        function happyCounter() {
+          if (typeof(Storage) !== "undefined") {
+            if (localStorage.happycount) {
+              localStorage.happycount = Number(localStorage.happycount)+1;
+            } else {
+              localStorage.happycount = 1;
+            }
+          } 
+        }
+
+        function sadCounter() {
+          if (typeof(Storage) !== "undefined") {
+            if (localStorage.sadcount) {
+              localStorage.sadcount = Number(localStorage.sadcount)+1;
+            } else {
+              localStorage.sadcount = 1;
+            }
+          } 
+        }
+
+        function clickDisplayH(){
+            document.getElementById("result").innerHTML = "You have made my cat happy " + localStorage.happycount + " time(s).";
+        }
+        function clickDisplayS(){
+            document.getElementById("result").innerHTML = "You have made my cat sad " + localStorage.sadcount + " time(s).";
+        }
+        </script>
+
+
+<body>
+        <img src="images/Killer_queen_c345.png" alt="Meow?" width=20% height=20%>
+
+
+
+        <p>
+        <img>
+
+        <a href="tup-submit.html"><input onclick="happyCounter()" type="image" src="images/tup.png" alt="Submit" width=50px height=50px>
+       </a>
+        </img>
+
+
+
+
+          <img>
+            
+          <a href="tdown-submit.html"><input onclick="sadCounter()" type="image" src="images/tdown2.png" alt="Submit" width=80px height=80px >
+        </a>
+        </img>
+        </p>
+<br />
+
+          <p><button onclick="clickDisplayH()" type="button">Happy History</button><button onclick="clickDisplayS()" type="button">Sad History</button> </p>  
+<div id="result"></div>
+    </body>
+
+    </html>
